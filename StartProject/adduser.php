@@ -26,7 +26,7 @@
 			</div>';
 	}else{
 		//redirect to index if not logged in
-		header("Location: ../index.php");
+		header("Location: index.php");
 		exit();
 	}
 ?>
