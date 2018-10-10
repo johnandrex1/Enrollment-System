@@ -23,51 +23,47 @@ return $clean;
         echo "Error";
       }
   }
+--->
 
-
--->
 <?php
-include_once 'StudentClass.php';
+  include_once 'StudentClass.php';
       if(isset($_POST['stud_name']) && isset($_POST['stud_sex'])){
           $object = new Student($_POST['stud_name'],$_POST['stud_address'],$_POST['stud_birthdate'],$_POST['stud_email'],$_POST['stud_cpNumber'],$_POST['stud_shsProg'],$_POST['stud_sex']);
-          $object->echoer();
+          $object->insertData();
       }
 
-  $dbcon = new DBFunction;
-  $dbcon->dbConnect();
-  echo $dbcon->fetchAllRecord();
 
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="jquery.datetimepicker.css">
+    <link rel="stylesheet" href="jquery.datetimepicker.min.css">
     <script src="jquery.js"></script>
     <script src="jquery.datetimepicker.full.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   </head>
   <body>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-      Name:<input type="text" name="stud_name">
+      Name:<input type="text" name="stud_name" required>
       <br>
       Sex:
-      <input type="radio" name="stud_sex" value="male">Male
-      <input type="radio" name="stud_sex" value="female">Female
+      <input type="radio" name="stud_sex" value="male"required >Male
+      <input type="radio" name="stud_sex" value="female"required>Female
       <br>
-      Birthday:<input  id="datepicker" name="stud_birthdate">
-      Address:<input type="text" name="stud_address">
+      Birthday:<input  id="datepicker" name="stud_birthdate" required>
+      Address:<input type="text" name="stud_address" required>
 <br>
   Contact Details:
   <br>
-      Email:<input type="email" name="stud_email">
-      Cellphone / Telephone Number:<input type="number" name="stud_cpNumber">
+      Email:<input type="email" name="stud_email" required>
+      Cellphone / Telephone Number:<input type="number" name="stud_cpNumber" required>
 
 
 <br>
       Educational Program:
-      <select name="stud_shsProg">
+      <select name="stud_shsProg" required>
         <option value="shs_ict">ICT</option>
         <option value="shs_abm">ABM</option>
         <option value="shs_abm">STEM</option>
