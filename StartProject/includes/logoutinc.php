@@ -5,8 +5,8 @@ if(isset($_POST['logoutbtn'])){
 	session_start();
 	session_unset();
 	session_destroy();
-	//redirect to index.php
-	header("Location: ../index.php");
+	//redirect to main.php
+	header("Location: ../main.php");
 	exit();
 }
 ?>

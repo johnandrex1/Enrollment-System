@@ -25,8 +25,8 @@
 						</form>				
 			</div>';
 	}else{
-		//redirect to index if not logged in
-		header("Location: index.php");
+		//redirect to main.php if not logged in
+		header("Location: main.php");
 		exit();
 	}
 ?>
